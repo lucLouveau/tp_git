@@ -8,7 +8,7 @@
 
 <body>
     <h1>Mon fichier GIT</h1>
-    <p>Et je teste git et VSCode </p>
+    <p>je teste git et VSCode </p>
     <?php echo date("d m y"); ?>
 </body>
 
