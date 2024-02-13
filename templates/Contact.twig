@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-   <title></title>
-   <link rel="stylesheet" type="text/css" href="styles.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
-   <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="Accueil.php">Accueil</a>
-      <a class="navbar-brand" href="#">Contact</a>
-   </nav>
-</body>
-</html>
+{% extends 'gabarit.twig' %}
+
+{% block title %}Page accueil{% endblock %}
+
+{% block contenu %}
+<h1>Contact</h1>
+<div class="card">
+   <div class="card-header">
+      Bienvenue sur votre site Internet.
+   </div>
+   <div class="card-body">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aliquam accusantium, praesentium molestiae delectus rem, modi dolor odit nam accusamus, molestias laboriosam repudiandae laborum deserunt autem soluta excepturi ipsa adipisci!
+   </div>
+</div>
+{% endblock %}
