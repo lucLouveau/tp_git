@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,36 +13,35 @@
         width: 100%;
         margin: 0;
     }
-    table>tbody>tr>td:nth-of-type(2){
-        display: flex;
-        flex-wrap: wrap;
-        text-align: center;
+    table{
+        border-collapse: collapse;
+        border:1px solid black;
     }
-    tr,td{
+    td{
         border: 1px solid black;
     }
-    .para{
-        width: 150px;
-        margin: 20px;
-        border-radius: 20px;
-        background-color: rgb(108, 108, 255);
+    thead{
+        background-color: grey;
+        
+    }
+    td>p{
+        background-color: rgb(132, 132, 255);
+        border-radius: 10px;
         padding: 10px;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
+        margin: 10px;
     }
-    .para>p{
-        width: 100%;
-        margin:10px 0;
+    p>p{
+        margin: 2px;
     }
+
     </style>
 </head>
 
 <body>
     <table>
-        <thead><tr><td>Date</td><td>Cours</td></tr></thead>
+        <thead><tr><td>Date</td></tr></thead>
         <tbody>
+            <tr><td>Cours</td></tr>
         </tbody>
     </table>
     <script>
@@ -56,19 +54,24 @@
                 var datePrem=new Date(cour.annee+"-"+cour.mois+"-"+(parseInt(cour.jour)+1));
                 if(datePrem>=date){
                     var pa=document.createElement("p");
-                    pa.classList.add('para');
                     pa.innerHTML="<p>"+cour.cours+"</p><p>"+cour.enseignant+"</p><p>de "+cour.hDebut+" à "+cour.hFin+"</p><p>salle: "+cour.salle+"</p>";
                     if(!document.querySelector('#j'+cour.jour+cour.mois+cour.annee)){
-                       var tr=document.createElement('tr');
-                       tr.id="j"+cour.jour+cour.mois+cour.annee;
-                       tr.innerHTML="<td>"+cour.jour+"/"+cour.mois+"/"+cour.annee+"</td><td></td>";
-                       $('tbody')[0].appendChild(tr);
+                        
+                       var td=document.createElement('td');
+                       var td2=document.createElement('td');
+                       td.id="j"+cour.jour+cour.mois+cour.annee;
+                       td2.id="j"+cour.jour+cour.mois+cour.annee;
+                       td.innerHTML=cour.jour+"/"+cour.mois+"/"+cour.annee;
+                       $('thead>tr')[0].appendChild(td);
+                        $('tbody>tr')[0].appendChild(td2);
                     }
-                    document.querySelector('#j'+cour.jour+cour.mois+cour.annee+'>td:nth-of-type(2)').appendChild(pa);
+                    $('tbody #j'+cour.jour+cour.mois+cour.annee)[0].appendChild(pa);
                 }
                 
             }
         });
     </script>
+</body>
+</html>
 </body>
 </html>
